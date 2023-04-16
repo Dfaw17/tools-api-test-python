@@ -4,7 +4,6 @@ on: [ push ]
 
 jobs:
   build:
-    environment: TEST_SECRET
     runs-on: ubuntu-latest
     steps:
 
