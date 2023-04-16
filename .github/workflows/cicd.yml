@@ -24,6 +24,7 @@ jobs:
         env:
           TEST: ${{ github.event.pull_request.title }}
           RUNID: ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}
+        with:
           CLIENT_SLACK: ${{ secrets.CLIENT_SLACK }}
 
       - name: Upload Artifact
