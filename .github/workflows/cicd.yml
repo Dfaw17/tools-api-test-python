@@ -19,11 +19,11 @@ jobs:
           pip install -r requirements.txt
 
       - name: Run test with pytest
-        run: pytest -s
         env:
           CLIENT_SLACK: ${{ secrets.CLIENT_SLACK }}
           TEST: ${{ github.event.pull_request.title }}
           RUNID: ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}
+        run: pytest -s
 
       - name: Upload Artifact
         if: always()
