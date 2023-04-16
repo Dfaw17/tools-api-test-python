@@ -4,6 +4,7 @@ on: [ push ]
 
 jobs:
   build:
+    environment: TEST_SECRET
     runs-on: ubuntu-latest
     steps:
 
@@ -24,8 +25,7 @@ jobs:
         env:
           TEST: ${{ github.event.pull_request.title }}
           RUNID: ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}
-          SLACK_NOTIF: ${{ secrets.SLACK_NOTIF }}
-          FAWWAZ: ${{ secrets.FAWWAZ }}
+          SLACK_WEBHOOK: ${{ secrets.SLACK_WEBHOOK }}
 
       - name: Upload Artifact
         if: always()
