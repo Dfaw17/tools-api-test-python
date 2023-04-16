@@ -25,6 +25,7 @@ jobs:
           TEST: ${{ github.event.pull_request.title }}
           RUNID: ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}
           SLACK_NOTIF: ${{ secrets.SLACK_NOTIF }}
+          FAWWAZ: ${{ secrets.FAWWAZ }}
 
       - name: Upload Artifact
         if: always()
