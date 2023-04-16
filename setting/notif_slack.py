@@ -76,6 +76,7 @@ def webhook_slack(color, success, failed, all, success_rate):
     }
     print("\nDEBUG : " + str(data.slack_webhook))
     if data.notif_slack == "ON":
+        print("\nHOLAAA")
         requests.post(data.slack_webhook, json=param, headers=header)
     else:
         print("NOTIF OFF")
