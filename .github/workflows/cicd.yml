@@ -24,7 +24,7 @@ jobs:
         env:
           TEST: ${{ github.event.pull_request.title }}
           RUNID: ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}
-          SLACK_WEBHOOK: ${{ secrets.SLACK_WEBHOOK }}
+          SLACK_NOTIF: ${{ secrets.SLACK_NOTIF }}
 
       - name: Upload Artifact
         if: always()
