@@ -23,7 +23,7 @@ jobs:
           CLIENT_SLACK: ${{ secrets.CLIENT_SLACK }}
           TEST: ${{ github.event.pull_request.title }}
           RUNID: ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}
-        run: pytest -s
+        run: pytest
 
       - name: Upload Artifact
         if: always()
