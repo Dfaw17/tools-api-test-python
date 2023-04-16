@@ -2,9 +2,6 @@ name: Run test with cicd
 
 on: [ push ]
 
-env:
-  slack_webhook: ${{ secrets.CLIENT_SLACK }}
-
 jobs:
   build:
     environment: TEST_SECRET
@@ -28,6 +25,7 @@ jobs:
         env:
           TEST: ${{ github.event.pull_request.title }}
           RUNID: ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}
+          client_slack: ${{ secrets.CLIENT_SLACK }}
 
       - name: Upload Artifact
         if: always()
