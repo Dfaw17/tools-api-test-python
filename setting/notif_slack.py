@@ -74,7 +74,7 @@ def webhook_slack(color, success, failed, all, success_rate):
     header = {
         "content-type": "application/x-www-form-urlencoded"
     }
-    print("DEBUG : " + str(data.slack_title))
+    print("DEBUG : " + str(data.url_artifact))
     if data.notif_slack == "ON":
         requests.post(data.slack_webhook, json=param, headers=header)
     else:
