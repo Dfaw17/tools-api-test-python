@@ -1,0 +1,9 @@
+websocket-client
+assertpy
+Faker
+Pillow
+pyotp
+pytest
+pytest-html
+requests
+jsonschema
