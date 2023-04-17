@@ -19,7 +19,7 @@ def webhook_slack(color, success, failed, all, success_rate):
                         "type": "header",
                         "text": {
                             "type": "plain_text",
-                            "text": "Haloo",
+                            "text": str(title),
                             "emoji": True
                         }
                     },
