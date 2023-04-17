@@ -20,7 +20,7 @@ def webhook_slack(color, success, failed, all, success_rate):
         "close": {
             "type": "plain_text",
             "text": "Cancel",
-            "emoji": true
+            "emoji": "true"
         },
         "blocks": [
             {
@@ -28,7 +28,7 @@ def webhook_slack(color, success, failed, all, success_rate):
                 "text": {
                     "type": "plain_text",
                     "text": "Haloo",
-                    "emoji": true
+                    "emoji": "true"
                 }
             },
             {
