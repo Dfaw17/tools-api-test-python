@@ -27,7 +27,7 @@ def webhook_slack(color, success, failed, all, success_rate):
                             },
                             {
                                 "type": "mrkdwn",
-                                "text": "*Failed Test:*\n 5"
+                                "text": f"*Failed Test:*\n {failed}"
                             }
                         ]
                     },
@@ -40,7 +40,7 @@ def webhook_slack(color, success, failed, all, success_rate):
                             },
                             {
                                 "type": "mrkdwn",
-                                "text": "*Total Test:*\n 15"
+                                "text": f"*Total Test:*\n {all}"
                             }
                         ]
                     },
@@ -49,7 +49,7 @@ def webhook_slack(color, success, failed, all, success_rate):
                         "fields": [
                             {
                                 "type": "mrkdwn",
-                                "text": "*Success Rate:*\n 10%"
+                                "text": f"*Success Rate:*\n {sr}%"
                             }
                         ]
                     },
@@ -57,7 +57,7 @@ def webhook_slack(color, success, failed, all, success_rate):
                         "type": "section",
                         "text": {
                             "type": "mrkdwn",
-                            "text": "<https://google.com|Check Detail Report>"
+                            "text": "<https:/dfaw17.github.io|Check Detail Report>"
                         }
                     }
                 ]
