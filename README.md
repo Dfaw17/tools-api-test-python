@@ -2,6 +2,10 @@
 
 this is e2e framework api test, has integrated with slack for notification, test management, netlify, and github action
 
+
+https://user-images.githubusercontent.com/79698509/232394599-c5adc684-fbe6-4e9c-a1e8-8ade21d43b0a.mp4
+
+
 ## Install Library
 ```
 pip install -r requirements.txt 
