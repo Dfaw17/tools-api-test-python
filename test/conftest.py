@@ -38,7 +38,7 @@ def hook(request):
 
 @pytest.fixture(scope='session', autouse=True)
 def suite(request):
-    print("\nbefore suite")
+    # print("\nbefore suite")
 
     yield
     webhook_debug()
@@ -52,5 +52,5 @@ def suite(request):
     else:
         color = "2B7A0B"
     webhook_slack(color, test_success,test_failed, test_all, success_rate)
-    print("after suite")
+    # print("after suite")
 

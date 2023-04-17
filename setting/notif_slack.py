@@ -13,7 +13,7 @@ def webhook_slack(color, success, failed, all, success_rate):
     param = {
         "attachments": [
             {
-                "color": color,
+                "color": str(color),
                 "blocks": [
                     {
                         "type": "header",
@@ -28,11 +28,11 @@ def webhook_slack(color, success, failed, all, success_rate):
                         "fields": [
                             {
                                 "type": "mrkdwn",
-                                "text": f"*Success Test:*\n{success}"
+                                "text": f"*Success Test:*\n{str(success)}"
                             },
                             {
                                 "type": "mrkdwn",
-                                "text": f"*Failed Test:*\n{failed}"
+                                "text": f"*Failed Test:*\n{(str(failed))}"
                             }
                         ]
                     },
@@ -45,7 +45,7 @@ def webhook_slack(color, success, failed, all, success_rate):
                             },
                             {
                                 "type": "mrkdwn",
-                                "text": f"*Total Test:*\n{all}"
+                                "text": f"*Total Test:*\n{str(all)}"
                             }
                         ]
                     },
@@ -54,7 +54,7 @@ def webhook_slack(color, success, failed, all, success_rate):
                         "fields": [
                             {
                                 "type": "mrkdwn",
-                                "text": f"*Success Rate:*\n{sr}%"
+                                "text": f"*Success Rate:*\n{str(sr)}%"
                             }
                         ]
                     },
@@ -62,7 +62,7 @@ def webhook_slack(color, success, failed, all, success_rate):
                         "type": "section",
                         "text": {
                             "type": "mrkdwn",
-                            "text": f"<{url_artifact}|Check Detail Report>"
+                            "text": f"<{str(url_artifact)}|Check Detail Report>"
                         }
                     }
                 ]
