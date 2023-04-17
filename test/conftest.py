@@ -42,14 +42,15 @@ def suite(request):
 
     yield
     webhook_debug()
+    test_success = len(request.session.items) - request.session.testsfailed
+    test_failed = request.session.testsfailed
+    test_all = len(request.session.items)
+    success_rate = test_success / test_all * 100
+
+    if test_failed > 0:
+        color = "FF1E00"
+    else:
+        color = "2B7A0B"
+    webhook_slack(color, test_success,test_failed, test_all, success_rate)
     print("after suite")
-    # test_success = len(request.session.items) - request.session.testsfailed
-    # test_failed = request.session.testsfailed
-    # test_all = len(request.session.items)
-    # success_rate = test_success / test_all * 100
-    #
-    # if test_failed > 0:
-    #     color = "FF1E00"
-    # else:
-    #     color = "2B7A0B"
 
