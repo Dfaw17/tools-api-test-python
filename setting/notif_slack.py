@@ -14,7 +14,7 @@ def webhook_slack(color, success, failed, all, success_rate):
                         "type": "header",
                         "text": {
                             "type": "plain_text",
-                            "text": str(slack_title),
+                            "text": "Test Automation Report",
                             "emoji": True
                         }
                     },
