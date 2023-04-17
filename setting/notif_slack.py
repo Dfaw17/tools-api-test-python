@@ -11,67 +11,61 @@ def webhook_slack(color, success, failed, all, success_rate):
         title = str(slack_title)
 
     param = {
-        "type": "modal",
-        "title": {
-            "type": "plain_text",
-            "text": "My App",
-            "emoji": True
-        },
-        "close": {
-            "type": "plain_text",
-            "text": "Cancel",
-            "emoji": True
-        },
-        "blocks": [
+        "attachments": [
             {
-                "type": "header",
-                "text": {
-                    "type": "plain_text",
-                    "text": "Haloo",
-                    "emoji": True
-                }
-            },
-            {
-                "type": "section",
-                "fields": [
+                "color": "#f2c744",
+                "blocks": [
                     {
-                        "type": "mrkdwn",
-                        "text": "*Success Test:*\n 10"
+                        "type": "header",
+                        "text": {
+                            "type": "plain_text",
+                            "text": "Haloo",
+                            "emoji": True
+                        }
                     },
                     {
-                        "type": "mrkdwn",
-                        "text": "*Failed Test:*\n 5"
-                    }
-                ]
-            },
-            {
-                "type": "section",
-                "fields": [
-                    {
-                        "type": "mrkdwn",
-                        "text": "*Skipped Test:*\n0"
+                        "type": "section",
+                        "fields": [
+                            {
+                                "type": "mrkdwn",
+                                "text": "*Success Test:*\n 10"
+                            },
+                            {
+                                "type": "mrkdwn",
+                                "text": "*Failed Test:*\n 5"
+                            }
+                        ]
                     },
                     {
-                        "type": "mrkdwn",
-                        "text": "*Total Test:*\n 15"
-                    }
-                ]
-            },
-            {
-                "type": "section",
-                "fields": [
+                        "type": "section",
+                        "fields": [
+                            {
+                                "type": "mrkdwn",
+                                "text": "*Skipped Test:*\n0"
+                            },
+                            {
+                                "type": "mrkdwn",
+                                "text": "*Total Test:*\n 15"
+                            }
+                        ]
+                    },
                     {
-                        "type": "mrkdwn",
-                        "text": "*Success Rate:*\n 10%"
+                        "type": "section",
+                        "fields": [
+                            {
+                                "type": "mrkdwn",
+                                "text": "*Success Rate:*\n 10%"
+                            }
+                        ]
+                    },
+                    {
+                        "type": "section",
+                        "text": {
+                            "type": "mrkdwn",
+                            "text": "<https://google.com|Check Detail Report>"
+                        }
                     }
                 ]
-            },
-            {
-                "type": "section",
-                "text": {
-                    "type": "mrkdwn",
-                    "text": "<https://google.com|Check Detail Report>"
-                }
             }
         ]
     }
