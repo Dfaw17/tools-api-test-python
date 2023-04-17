@@ -1,15 +1,14 @@
 import requests
-
-import setting.general as data
+from setting.general import *
 
 
 def webhook_slack(color, success, failed, all, success_rate):
     sr = round(success_rate, 2)
 
-    if data.slack_title is None:
-        slack_title = "Reports Automation Api"
+    if slack_title is None:
+        title = "Reports Automation Api"
     else:
-        slack_title = str(data.slack_title)
+        title = str(slack_title)
 
     param = {
         "attachments": [
@@ -20,7 +19,7 @@ def webhook_slack(color, success, failed, all, success_rate):
                         "type": "header",
                         "text": {
                             "type": "plain_text",
-                            "text": slack_title,
+                            "text": title,
                             "emoji": True
                         }
                     },
@@ -63,7 +62,7 @@ def webhook_slack(color, success, failed, all, success_rate):
                         "type": "section",
                         "text": {
                             "type": "mrkdwn",
-                            "text": f"<{data.url_artifact}|Check Detail Report>"
+                            "text": f"<{url_artifact}|Check Detail Report>"
                         }
                     }
                 ]
@@ -74,10 +73,4 @@ def webhook_slack(color, success, failed, all, success_rate):
     header = {
         "content-type": "application/x-www-form-urlencoded"
     }
-    print("\nDEBUG : " + str(data.slack_webhook))
-    if data.notif_slack == "ON":
-        print("\nHOLAAA")
-        requests.post(data.slack_webhook, json=param, headers=header)
-        print("\nHALOOO")
-    else:
-        print("NOTIF OFF")
+    requests.post(slack_webhook, json=param, headers=header)

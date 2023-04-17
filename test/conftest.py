@@ -53,11 +53,5 @@ def suite(request):
     else:
         color = "2B7A0B"
 
-    if notif_slack_just_failed == "YES":
-        if test_failed > 0:
-            print("")
-            webhook_slack(color, test_success, test_failed, test_all, success_rate)
-        else:
-            print("")
-    else:
-        webhook_slack(color, test_success, test_failed, test_all, success_rate)
+    webhook_slack(color, test_success, test_failed, test_all, success_rate)
+
