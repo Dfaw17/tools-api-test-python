@@ -23,7 +23,7 @@ def webhook_slack(color, success, failed, all, success_rate):
                         "fields": [
                             {
                                 "type": "mrkdwn",
-                                "text": "*Success Test:*\n 10"
+                                "text": f"*Success Test:*\n {success}"
                             },
                             {
                                 "type": "mrkdwn",
