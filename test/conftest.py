@@ -38,11 +38,11 @@ def hook(request):
 
 @pytest.fixture(scope='session', autouse=True)
 def suite(request):
-    # print("\nbefore suite")
+    print("\nbefore suite")
 
     yield
 
-    # print("after suite")
+    print("after suite")
     test_success = len(request.session.items) - request.session.testsfailed
     test_failed = request.session.testsfailed
     test_all = len(request.session.items)
