@@ -11,61 +11,67 @@ def webhook_slack(color, success, failed, all, success_rate):
         title = str(slack_title)
 
     param = {
-        "attachments": [
+        "type": "modal",
+        "title": {
+            "type": "plain_text",
+            "text": "My App",
+            "emoji": "true"
+        },
+        "close": {
+            "type": "plain_text",
+            "text": "Cancel",
+            "emoji": true
+        },
+        "blocks": [
             {
-                "color": str(color),
-                "blocks": [
+                "type": "header",
+                "text": {
+                    "type": "plain_text",
+                    "text": "Haloo",
+                    "emoji": true
+                }
+            },
+            {
+                "type": "section",
+                "fields": [
                     {
-                        "type": "header",
-                        "text": {
-                            "type": "plain_text",
-                            "text": title,
-                            "emoji": True
-                        }
+                        "type": "mrkdwn",
+                        "text": "*Success Test:*\n 10"
                     },
                     {
-                        "type": "section",
-                        "fields": [
-                            {
-                                "type": "mrkdwn",
-                                "text": f"*Success Test:*\n{str(success)}"
-                            },
-                            {
-                                "type": "mrkdwn",
-                                "text": f"*Failed Test:*\n{(str(failed))}"
-                            }
-                        ]
-                    },
-                    {
-                        "type": "section",
-                        "fields": [
-                            {
-                                "type": "mrkdwn",
-                                "text": "*Skipped Test:*\n0"
-                            },
-                            {
-                                "type": "mrkdwn",
-                                "text": f"*Total Test:*\n{str(all)}"
-                            }
-                        ]
-                    },
-                    {
-                        "type": "section",
-                        "fields": [
-                            {
-                                "type": "mrkdwn",
-                                "text": f"*Success Rate:*\n{str(sr)}%"
-                            }
-                        ]
-                    },
-                    {
-                        "type": "section",
-                        "text": {
-                            "type": "mrkdwn",
-                            "text": f"<{str(url_artifact)}|Check Detail Report>"
-                        }
+                        "type": "mrkdwn",
+                        "text": "*Failed Test:*\n 5"
                     }
                 ]
+            },
+            {
+                "type": "section",
+                "fields": [
+                    {
+                        "type": "mrkdwn",
+                        "text": "*Skipped Test:*\n0"
+                    },
+                    {
+                        "type": "mrkdwn",
+                        "text": "*Total Test:*\n 15"
+                    }
+                ]
+            },
+            {
+                "type": "section",
+                "fields": [
+                    {
+                        "type": "mrkdwn",
+                        "text": "*Success Rate:*\n 10%"
+                    }
+                ]
+            },
+            {
+                "type": "section",
+                "text": {
+                    "type": "mrkdwn",
+                    "text": "<https://google.com|Check Detail Report>"
+                }
             }
         ]
     }
