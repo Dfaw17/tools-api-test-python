@@ -74,3 +74,11 @@ def webhook_slack(color, success, failed, all, success_rate):
         "content-type": "application/x-www-form-urlencoded"
     }
     requests.post(slack_webhook, json=param, headers=header)
+
+
+def webhook_debug():
+    header = {
+        "content-type": "application/x-www-form-urlencoded"
+    }
+    param = {"text": "Hello faw"}
+    requests.post(slack_webhook, json=param, headers=header)
