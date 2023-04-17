@@ -20,6 +20,7 @@ jobs:
       - name: Run test with pytest
         env:
           CLIENT_SLACK: ${{ secrets.CLIENT_SLACK }}
+          API_KEY_QASE: ${{ secrets.API_KEY_QASE }}
         run: pytest -s
 
       - name: Deploy to Netlify

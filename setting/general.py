@@ -9,7 +9,7 @@ username_postku_not_found = "admin170901"
 max_latency = 1000000
 
 # TEST CASE MANAGEMENT
-api_key = "8b8d6169357d45082a3c818240449a38b7a56fddafdfe3aa0bdda8a32c5bf632"
+api_key = os.environ.get('API_KEY_QASE')
 host_test_management = "https://api.qase.io/v1/result"
 test_run = 9
 test_code_project = "TF"
