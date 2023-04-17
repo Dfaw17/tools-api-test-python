@@ -8,7 +8,7 @@ def webhook_slack(color, success, failed, all, success_rate):
     if slack_title is None:
         title = "Reports Automation Api"
     else:
-        title = str(slack_title)
+        title = slack_title
 
     param = {
         "attachments": [
@@ -19,7 +19,7 @@ def webhook_slack(color, success, failed, all, success_rate):
                         "type": "header",
                         "text": {
                             "type": "plain_text",
-                            "text": str(title),
+                            "text": title,
                             "emoji": True
                         }
                     },
