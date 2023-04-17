@@ -57,7 +57,7 @@ def webhook_slack(color, success, failed, all, success_rate):
                         "type": "section",
                         "text": {
                             "type": "mrkdwn",
-                            "text": "<https://dfaw17.github.io|Check Detail Report>"
+                            "text": "<https://www.linkedin.com/in/daffa-fawwaz-maulana/|Go to my linkedin>"
                         }
                     }
                 ]
