@@ -37,20 +37,18 @@ def hook(request):
 
 @pytest.fixture(scope='session', autouse=True)
 def suite(request):
-    # print("\nbefore suite")
+    print("\nbefore suite")
 
     yield
-
-    # print("after suite")
-    test_success = len(request.session.items) - request.session.testsfailed
-    test_failed = request.session.testsfailed
-    test_all = len(request.session.items)
-    success_rate = test_success / test_all * 100
-
-    if test_failed > 0:
-        color = "FF1E00"
-    else:
-        color = "2B7A0B"
-
     webhook_debug()
+    print("after suite")
+    # test_success = len(request.session.items) - request.session.testsfailed
+    # test_failed = request.session.testsfailed
+    # test_all = len(request.session.items)
+    # success_rate = test_success / test_all * 100
+    #
+    # if test_failed > 0:
+    #     color = "FF1E00"
+    # else:
+    #     color = "2B7A0B"
 
