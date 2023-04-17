@@ -1,5 +1,6 @@
 import pytest
 from setting.case_management import *
+from setting.notif_slack import *
 
 
 def pytest_html_report_title(report):
