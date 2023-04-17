@@ -22,15 +22,29 @@ jobs:
           CLIENT_SLACK: ${{ secrets.CLIENT_SLACK }}
         run: pytest -s
 
-      - name: Upload Artifact
-        if: always()
-        uses: actions/upload-artifact@v3
+      - name: Deploy to Netlify
+        uses: nwtgck/actions-netlify@v1.2
         with:
-          name: report
-          path: report/
+          publish-dir: './report'
+          github-token: ${{ secrets.MY_TOKEN }}
+          deploy-message: "Deploy from GitHub Actions"
+          enable-pull-request-comment: false
+          enable-commit-comment: true
+          overwrites-pull-request-comment: true
+        env:
+          NETLIFY_AUTH_TOKEN: ${{ secrets.NETLIFY_AUTH_TOKEN }}
+          NETLIFY_SITE_ID: ${{ secrets.NETLIFY_SITE_ID }}
+        timeout-minutes: 1
 
-      - name: Download Artifact
-        if: always()
-        uses: actions/download-artifact@v3
+      - name: Get deployment URL
+        id: deployment
+        uses: dorshinar/get-deployment-url@master
+        timeout-minutes: 5
         with:
-          name: report
+          token: ${{ secrets.MY_TOKEN }}
+
+      - name: Send Report Slack
+        run: python setting/netlify_link.py
+        env:
+          deployment: ${{ steps.deployment.outputs.deployment }}
+          CLIENT_SLACK: ${{ secrets.CLIENT_SLACK }}
