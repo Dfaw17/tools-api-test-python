@@ -25,11 +25,6 @@ jobs:
           RUNID: ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}
         run: pytest
 
-      - run: 'echo "CLIENT_SLACK" | base64'
-        shell: bash
-        env:
-          CLIENT_SLACK: ${{ secrets.CLIENT_SLACK }}
-
       - name: Upload Artifact
         if: always()
         uses: actions/upload-artifact@v3
