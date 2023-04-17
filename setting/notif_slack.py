@@ -13,13 +13,13 @@ def webhook_slack(color, success, failed, all, success_rate):
     param = {
         "attachments": [
             {
-                "color": f"{color}",
+                "color": str(color),
                 "blocks": [
                     {
                         "type": "header",
                         "text": {
                             "type": "plain_text",
-                            "text": f"{title}",
+                            "text": "Haloo",
                             "emoji": True
                         }
                     },
