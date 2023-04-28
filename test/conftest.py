@@ -41,7 +41,6 @@ def suite(request):
     # print("\nbefore suite")
 
     yield
-    webhook_debug()
     test_success = len(request.session.items) - request.session.testsfailed
     test_failed = request.session.testsfailed
     test_all = len(request.session.items)

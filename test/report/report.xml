@@ -1,1 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?><testsuites><testsuite name="pytest" errors="0" failures="0" skipped="0" tests="1" time="0.256" timestamp="2023-04-16T11:27:15.169329" hostname="pintus-macbook-pro-2-6.pintu.co.id.beta.tailscale.net"><testcase classname="test.test_postku_login" name="test_login_acc_not_found" time="0.222" /></testsuite></testsuites>
