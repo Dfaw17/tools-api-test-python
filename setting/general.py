@@ -15,8 +15,8 @@ test_run = 9
 test_code_project = "TF"
 
 # SLACK NOTIFICATION
-slack_webhook = os.environ.get('CLIENT_SLACK')
+slack_webhook = "https://hooks.slack.com/services/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"
 slack_title = os.environ.get('TEST')
 url_artifact = os.environ.get('RUNID')
-notif_slack = "ON"
+notif_slack = "OFF"
 notif_slack_just_failed = "NO"
