@@ -25,7 +25,7 @@ jobs:
 
       - name: Deploy to Netlify
         uses: nwtgck/actions-netlify@v1.2
-        id: deployment
+        id: deployment-netlify
         with:
           publish-dir: './report'
           github-token: ${{ secrets.MY_TOKEN }}
@@ -44,5 +44,5 @@ jobs:
       - name: Send Report Slack
         run: python setting/netlify_link.py
         env:
-          deployment: ${{ steps.deployment.outputs.deployment }}
+          deployment: ${{ steps.deployment-netlify.outputs }}
           CLIENT_SLACK: ${{ secrets.CLIENT_SLACK }}
