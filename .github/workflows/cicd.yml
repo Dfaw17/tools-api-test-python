@@ -41,6 +41,9 @@ jobs:
         uses: voorhoede/get-netlify-url@v2
         id: get-netlify-url
 
+      - name: Log retrieved URL
+        run: echo ${{ steps.get-netlify-url.outputs.url }}
+
       - name: Send Report Slack
         run: python setting/netlify_link.py
         env:
