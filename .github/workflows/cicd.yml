@@ -39,7 +39,7 @@ jobs:
         timeout-minutes: 1
 
       - name: Log retrieved URL
-        run: echo ${{ steps.deployment-netlify.outputs.deployment }}
+        run: echo ${{ steps.deployment-netlify.outputs.deploy-url }}
 
 #      - name: Send Report Slack
 #        run: python setting/netlify_link.py
