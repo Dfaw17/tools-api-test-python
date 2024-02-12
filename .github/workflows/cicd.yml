@@ -25,6 +25,7 @@ jobs:
 
       - name: Deploy to Netlify
         uses: nwtgck/actions-netlify@v1.2
+        id: deployment
         with:
           publish-dir: './report'
           github-token: ${{ secrets.MY_TOKEN }}
@@ -36,13 +37,6 @@ jobs:
           NETLIFY_AUTH_TOKEN: ${{ secrets.NETLIFY_AUTH_TOKEN }}
           NETLIFY_SITE_ID: ${{ secrets.NETLIFY_SITE_ID }}
         timeout-minutes: 1
-
-      - name: Get deployment URL
-        id: deployment
-        uses: dorshinar/get-deployment-url@master
-        timeout-minutes: 5
-        with:
-          token: ${{ secrets.MY_TOKEN }}
 
       - name: Log retrieved URL
         run: echo ${{ steps.deployment.outputs.deployment }}
